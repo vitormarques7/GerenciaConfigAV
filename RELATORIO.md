@@ -32,6 +32,7 @@
   - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
   <details>
     <summary>Clique para ver o print do commit</summary>
+
     ![Commit da feature/alana-add-title](images/alana-commit-feature-h1.png)
   </details>
   - `feature/alana-add-css` – adiciona arquivo `style.css`
