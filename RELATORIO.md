@@ -40,34 +40,34 @@
 
       ![Commit da feature/vitor-add-header](images/print%20feature2%20vitor.png)
     </details>
-    
-  - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
-  <details>
-    <summary>Clique para ver o print do commit</summary>
 
-    ![Commit da feature/alana-add-title](images/alana-commit-feature-h1.png)
-  </details>
+  - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
+    <details>
+      <summary>Clique para ver o print do commit</summary>
+
+      ![Commit da feature/alana-add-title](images/alana-commit-feature-h1.png)
+    </details>
 
   - `feature/alana-add-css` – adiciona arquivo `style.css`
-  <details>
-    <summary>Clique para ver o print do commit</summary>
+    <details>
+      <summary>Clique para ver o print do commit</summary>
 
-    ![Commit da feature/alana-add-css](images/alana-commit-feature-css.png)
-  </details>
+      ![Commit da feature/alana-add-css](images/alana-commit-feature-css.png)
+    </details>
 
   - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
-  <details>
-    <summary>Clique para ver o print do commit</summary>
-  
-    ![imagem commits2.png](images/imagem%20commits2.png)
-  </details>
+    <details>
+      <summary>Clique para ver o print do commit</summary>
+    
+      ![imagem commits2.png](images/imagem%20commits2.png)
+    </details>
 
   - `feature/leticia-update-readme` – preenche nomes no `README.md`
-  <details>
-    <summary>Clique para ver o print do commit</summary>
-  
-    ![imagem commits1.png](images/imagem%20commits1.png)
-  </details>
+    <details>
+      <summary>Clique para ver o print do commit</summary>
+    
+      ![imagem commits1.png](images/imagem%20commits1.png)
+    </details>
 
 - Todos os commits foram registrados e enviados para o remoto.
 
@@ -121,6 +121,13 @@
 
     ![Criação do Hotfix](images/alana-commit-hotfix.png)
   </details>
+
+- A integração foi realizada pelo integrante Vitor
+  <details>
+    <summary>Clique para ver o print da integração do Hotfix</summary>
+
+    ![Integração do Hotfix](images/print%20integracao%20hotfix.png)
+  </details>  
 
 ### 2.5 Uso de Rebase
 - Aplicado rebase na branch `feature/leticia-add-footer`.
