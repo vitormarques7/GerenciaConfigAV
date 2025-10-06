@@ -28,7 +28,19 @@
 ### 2.1 Features
 - **Branches criadas:**
   - `feature/vitor-add-html` – adiciona estrutura base do `index.html`
+    <details>
+      <summary>Clique para ver o print do commit</summary>
+
+      ![Commit da feature/vitor-add-html](images/print%20feature1%20vitor.png)
+    </details>
+
   - `feature/vitor-add-header` – adiciona `<header>` no `index.html`
+    <details>
+      <summary>Clique para ver o print do commit</summary>
+
+      ![Commit da feature/vitor-add-header](images/print%20feature2%20vitor.png)
+    </details>
+    
   - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
   <details>
     <summary>Clique para ver o print do commit</summary>
