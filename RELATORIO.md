@@ -122,7 +122,7 @@
     ![Criação do Hotfix](images/alana-commit-hotfix.png)
   </details>
 
-- A integração foi realizada pelo integrante Vitor
+- Abaixo, o print dos commits de integração realizados por Vitor.
   <details>
     <summary>Clique para ver o print da integração do Hotfix</summary>
 
@@ -135,7 +135,7 @@
   ```bash
   git rebase -i HEAD~2
   ```
-- O histórico ficou mais limpo e linear após o `squash`.
+- O histórico da feature foi reescrito: em vez de dois commits separados ("feat: Adiciona footer..." e "fix: Atualiza nome..."), eles foram combinados em um único commit mais coeso. Isso tornou a integração na branch develop mais limpa, pois a funcionalidade inteira foi adicionada em um passo único, facilitando futuras revisões do código.
 
 ---
 
