@@ -2,7 +2,7 @@
 
 ## Identificação
 - **Integrantes da equipe**:
-- Vitor
+- João Vitor dos Santos Marques
 - Alana
 - Letícia
 
