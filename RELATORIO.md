@@ -30,6 +30,10 @@
   - `feature/vitor-add-html` – adiciona estrutura base do `index.html`
   - `feature/vitor-add-header` – adiciona `<header>` no `index.html`
   - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
+  <details>
+    <summary>Clique para ver o print do commit</summary>
+    ![Commit da feature/alana-add-title](images/alana-commit-feature-h1.png)
+  </details>
   - `feature/alana-add-css` – adiciona arquivo `style.css`
   - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
   - `feature/leticia-update-readme` – preenche nomes no `README.md`
