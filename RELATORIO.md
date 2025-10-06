@@ -193,3 +193,12 @@ git log --oneline --graph --all
 ![Histórico parte 2](images/oneline%20graph%20all2.png)
 ![Histórico parte 3](images/oneline%20graph%20all3.png)
 
+---
+
+## 5. Reflexão Final
+
+Neste projeto, testamos o Git Flow e o Trunk-Based Development. Para o nosso time e para um trabalho rápido como este, o Trunk-Based (da Fase 2) foi bem mais eficiente. O processo de criar branches curtas direto da main foi mais rápido e com menos complicação, o que agilizou bastante o nosso trabalho.
+
+Já o Git Flow (da Fase 1), apesar de ser muito seguro, pareceu complexo demais para o que precisávamos. Ter que gerenciar tantas branches (feature, release, hotfix) exigiu mais cuidado e gerou algumas dúvidas no começo, principalmente com arquivos que dependiam do trabalho de outro colega.
+
+Nossa conclusão é que a melhor estratégia depende do projeto. O Git Flow é excelente para projetos grandes e com muitas regras, mas para o nosso caso, a simplicidade e a velocidade do Trunk-Based foram a melhor escolha.
