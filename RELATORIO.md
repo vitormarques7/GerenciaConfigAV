@@ -35,7 +35,14 @@
 
     ![Commit da feature/alana-add-title](images/alana-commit-feature-h1.png)
   </details>
+
   - `feature/alana-add-css` – adiciona arquivo `style.css`
+  <details>
+    <summary>Clique para ver o print do commit</summary>
+
+    ![Commit da feature/alana-add-css](images/alana-commit-feature-css.png)
+  </details>
+  
   - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
   - `feature/leticia-update-readme` – preenche nomes no `README.md`
 - Todos os commits foram registrados e enviados para o remoto.
