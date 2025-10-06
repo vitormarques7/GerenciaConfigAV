@@ -2,11 +2,11 @@
 
 ## Identificação
 - **Integrantes da equipe**:
-- Vitor
+- João Vitor dos Santos Marques
 - Alana
 - Letícia
 
-- **Repositório GitHub**: [link aqui]
+- **Repositório GitHub**: https://github.com/vitormarques7/GerenciaConfigAV.git
 ## 1. Estrutura Inicial
 - Branch principal (`main`) criada e configurada?
 - Branch `develop` criada a partir de `main`?
