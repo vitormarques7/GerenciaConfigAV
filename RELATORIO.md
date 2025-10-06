@@ -2,90 +2,126 @@
 
 ## Identificação
 - **Integrantes da equipe**:
-- João Vitor dos Santos Marques
-- Alana
-- Letícia
+  - João Vitor dos Santos Marques
+  - Alana Brito
+  - Letícia Oliveira
+- **Repositório GitHub**: [https://github.com/vitormarques7/GerenciaConfigAV.git](https://github.com/vitormarques7/GerenciaConfigAV.git)
 
-- **Repositório GitHub**: https://github.com/vitormarques7/GerenciaConfigAV.git
+---
+
 ## 1. Estrutura Inicial
-- Branch principal (`main`) criada e configurada?
-- Branch `develop` criada a partir de `main`?
-- Descreva como foi feita a configuração inicial (comandos usados e prints).
-    - A configuração inicial foi realizada por todos os integrantes da equipe em suas máquinas locais. 
-      Após clonar o repositório (git clone), cada membro configurou sua identidade no Git utilizando os 
-      comandos git config --global user.name "Seu Nome" e git config --global user.email "seu.email@exemplo.com".
-      A verificação foi feita com o comando git config --global --list para garantir que as credenciais estavam corretas.
-  
-    - ### Comando utilizado: git config --global --list
+- Branch principal `main` criada e configurada.
+- Branch `develop` criada a partir de `main`.
+- Configuração inicial feita com os comandos:
+  ```bash
+  git init
+  git checkout -b main
+  git checkout -b develop main
+  git push -u origin main
+  git push -u origin develop
+  ```
 
-      [imagem git config.png](images/imagem%20git%20config.png)
-    - ### Comando utilizado: git remote -v
+---
 
-      [imagem git remote.png](images/imagem%20git%20remote.png)
-
-    - ### Comando utilizado: git branch -a
-
-      [imagem git branch.png](images/imagem%20git%20branch.png)
-  
 ## 2. Fase 1 – Git Flow
+
 ### 2.1 Features
-- Quais features foram criadas?
-  - feature/leticia-add-footer
-  - feature/leticia-update-readme
-- Liste as branches de features e descreva as alterações.
-  - ### Leticia
-    - feature/leticia-add-footer: Esta branch foi criada para adicionar um rodapé (footer) ao arquivo index.html. 
-      O trabalho foi feito em dois commits: o primeiro adicionou o rodapé e o segundo ajustou o texto de copyright. 
-      Posteriormente, esses commits foram unificados com rebase.
-
-    - feature/leticia-update-readme: O objetivo desta branch foi atualizar o arquivo README.md, preenchendo a seção 
-        de integrantes da equipe com os nomes de todos os membros. 
-  
-- Prints dos commits:
-
-  [imagem commits1.png](images/imagem%20commits1.png)
+- **Branches criadas:**
+  - `feature/vitor-add-html` – adiciona estrutura base do `index.html`
+  - `feature/vitor-add-header` – adiciona `<header>` no `index.html`
+  - `feature/alana-add-title` – adiciona `<h1>` principal no `index.html`
+  - `feature/alana-add-css` – adiciona arquivo `style.css`
+  - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
+  - `feature/leticia-update-readme` – preenche nomes no `README.md`
+- Todos os commits foram registrados e enviados para o remoto.
 
 ### 2.2 Conflitos
-- Onde ocorreram conflitos (arquivos/linhas)?
-- Como os conflitos foram resolvidos?
-- Inclua prints mostrando os marcadores (`<<<<<<<`, `=======`, `>>>>>>>`) e o
-  arquivo final após resolução.
+- Conflito ocorreu no arquivo `index.html` durante o merge da `feature/alana-add-title` na `develop`.
+- Marcadores de conflito visualizados e resolvidos manualmente.
+  
+  **Print do conflito:**
+  ![Conflito no arquivo index.html](images/imagem%20de%20conflito%20no%20arquivo%20index.png)
+
+  **Print após resolução:**
+  ![Conflito resolvido](images/imagem%20conflito%20resolvido%20index.png)
+
+- Commit da resolução:
+  ```bash
+  git add index.html
+  git commit -m "fix: Resolve conflito de merge no titulo do index.html"
+  git push origin develop
+  ```
 
 ### 2.3 Release
-- Criada branch `release/2.0`?
-- Alterações preparatórias (ex.: versão, documentação).
-- Integração com `main` e geração da tag `v2.0`.
+- Criada branch `release/2.0` a partir da `develop`.
+- Adicionado arquivo `VERSION.txt` com conteúdo `2.0`.
+- Merge em `main` e `develop` concluído.
+- Tag criada:
+  ```bash
+  git tag -a v2.0 -m "Release da versão 2.0"
+  git push origin v2.0
+  ```
 
 ### 2.4 Hotfix
-- Qual foi o problema corrigido?
-- Como foi feito o merge do hotfix em `main` e `develop`?
-- Inclua prints e comandos usados.
+- Criado `hotfix/2.0.1` para corrigir estrutura do relatório e adicionar nomes da equipe.
+- Merge do hotfix feito em `main` e `develop`.
+- Tag criada:
+  ```bash
+  git tag -a v2.0.1 -m "Correção crítica 2.0.1"
+  git push origin v2.0.1
+  ```
 
 ### 2.5 Uso de Rebase
-- Em qual feature aplicaram `git rebase`?
-- Explique o que mudou no histórico.
+- Aplicado rebase na branch `feature/leticia-add-footer`.
+- Foram unificados dois commits (feat + fix) em apenas um:
+  ```bash
+  git rebase -i HEAD~2
+  ```
+- O histórico ficou mais limpo e linear após o `squash`.
+
+---
 
 ## 3. Fase 2 – Trunk-Based Development
+
 ### 3.1 Branches Curtos
-- Quais branches foram criados a partir de `main`?
-- Quantos commits cada um teve?
+- Criadas diretamente da `main`:
+  - `vitor-task-1` – 1 commit (arquivo `about.html`)
+  - `alana-task-2` – 2 commits (arquivo `contact.html`)
+  - `leticia-task-3` – 1 commit (arquivo `services.html`)
 
 ### 3.2 Squash
-- Qual merge foi feito usando **squash**?
-- Explique por que foi escolhido squash em vez de merge normal.
+- Merge da branch `alana-task-2` feito com squash:
+  ```bash
+  git merge --squash alana-task-2
+  git commit -m "feat: Implementa página de contato com estilos"
+  ```
+- Squash usado para manter histórico da `main` limpo, condensando commits pequenos em um só.
 
 ### 3.3 Tag Final
-- Tag criada: `v3.0`.
-- - Prints do histórico.
+- Tag criada para a versão final:
+  ```bash
+  git tag -a v3.0 -m "Release da versão 3.0 – Trunk-Based"
+  git push origin v3.0
+  ```
+
+---
 
 ## 4. Histórico de Commits
-Inclua saída do comando [com "git log --oneline --graph --all"]:
-* 0d9e9f4 (HEAD -> main, origin/main, origin/HEAD) docs: Adiciona estrutura ao RELATORIO.md
+Saída do comando:
+```bash
+git log --oneline --graph --all
+```
+*   244d13f (HEAD -> main, origin/main, origin/HEAD) Merge branch 'main' of https://github.com/vitormarques7/GerenciaConfigAV
+    |\  
+    | * 442851a docs: adiciona o link do repositório no RELATORIO.md
+* | 14553d8 docs: Preenche as partes direcionadas a Letícia
+  |/
+* 0d9e9f4 docs: Adiciona estrutura ao RELATORIO.md
 * 3920877 docs: Adiciona imagens para o relatório
 * c3fbd71 (tag: v3.0) feat: Implementa página de contato com estilos
 *   094db36 Merge branch 'leticia-task-3'
     |\  
-    | * 23dfbea (origin/leticia-task-3, leticia-task-3) feat: Adiciona página de serviços
+    | * 23dfbea (origin/leticia-task-3) feat: Adiciona página de serviços
 * |   50f36a9 Merge branch 'vitor-task-1'
   |\ \  
   | * | 3c5e886 (origin/vitor-task-1, vitor-task-1) feat: Adiciona página sobre
@@ -97,11 +133,11 @@ Inclua saída do comando [com "git log --oneline --graph --all"]:
   |/|
 * |   4836cb3 (tag: v2.0.1) Merge remote-tracking branch 'origin/hotfix/2.0.1'
   |\ \  
-  | | | *   e7d5bf9 (origin/develop) Merge remote-tracking branch 'origin/hotfix/2.0.1' into develop
+  | | | *   e7d5bf9 (origin/develop, develop) Merge remote-tracking branch 'origin/hotfix/2.0.1' into develop
   | | | |\  
   | | |_|/  
   | |/| |   
-  | * | | a86ff81 (origin/hotfix/2.0.1) fix(docs): Ajusta relatório ao modelo da atividade e adiciona integrantes
+  | * | | a86ff81 (origin/hotfix/2.0.1, hotfix/2.0.1) fix(docs): Ajusta relatório ao modelo da atividade e adiciona integrantes
   |/ / /
 * | |   7e0b185 (tag: v2.0) feat: Finaliza release 2.0 e integra na main
   |\ \ \  
@@ -113,76 +149,47 @@ Inclua saída do comando [com "git log --oneline --graph --all"]:
   | | |\  
   | | |/  
   | |/|   
-  | * | ec9edaf (origin/release/2.0) chore: Atualiza a versão para 2.0
-* 0d9e9f4 (HEAD -> main, origin/main, origin/HEAD) docs: Adiciona estrutura ao RELATORIO.md
-* 3920877 docs: Adiciona imagens para o relatório
-* c3fbd71 (tag: v3.0) feat: Implementa página de contato com estilos
-*   094db36 Merge branch 'leticia-task-3'
-    |\
-    | * 23dfbea (origin/leticia-task-3, leticia-task-3) feat: Adiciona página de serviços
-* |   50f36a9 Merge branch 'vitor-task-1'
-  |\ \
-  | * | 3c5e886 (origin/vitor-task-1, vitor-task-1) feat: Adiciona página sobre
-  |/ /
-  | | * 42b78c6 (origin/alana-task-2, alana-task-2) refactor: Move contact.html para o diretório src
-  | | * e3d8010 style: Ajusta espaçamento na página de contato
-  | | * 794e458 feat: Adiciona página de contato
-  | |/
-  |/|
-* |   4836cb3 (tag: v2.0.1) Merge remote-tracking branch 'origin/hotfix/2.0.1'
-  |\ \
-  | | | *   e7d5bf9 (origin/develop) Merge remote-tracking branch 'origin/hotfix/2.0.1' into develop
-  | | | |\
-  | | |_|/
-  | |/| |
-  | * | | a86ff81 (origin/hotfix/2.0.1) fix(docs): Ajusta relatório ao modelo da atividade e adiciona integrantes
-  |/ / /
-* | |   7e0b185 (tag: v2.0) feat: Finaliza release 2.0 e integra na main
-  |\ \ \
-  | |/ /
-  |/| |
-* | | 4164c53 fix: Atualiza nome da equipe no footer
-* | | a646ebb feat: Adiciona footer na página
-  | | *   3a0be6c Merge branch 'release/2.0' into develop
-  | | |\
-  | | |/
-  | |/|
-  | * | ec9edaf (origin/release/2.0) chore: Atualiza a versão para 2.0
-  | |/
+  | * | ec9edaf (origin/release/2.0, release/2.0) chore: Atualiza a versão para 2.0
+  | |/  
   | *   350c604 feat: Integra feature de footer e resolve conflitos
-  | |\
-  | | * 668e173 (origin/feature/leticia-add-footer, feature/leticia-add-footer) feat: Adiciona e ajusta footer da página
-  | * |   e7d90d0 (develop) fix: Resolve conflito ao integrar header da branch feature/vitor-add-header
-  | |\ \
-  | | * | 0c89883 (origin/feature/vitor-add-header) feat: Adiciona header na página inicial
+  | |\  
+  | | * 668e173 (origin/feature/leticia-add-footer) feat: Adiciona e ajusta footer da página
+  | * |   e7d90d0 fix: Resolve conflito ao integrar header da branch feature/vitor-add-header
+  | |\ \  
+  | | * | 0c89883 (origin/feature/vitor-add-header, feature/vitor-add-header) feat: Adiciona header na página inicial
   | * | |   42e9b8a Merge remote-tracking branch 'origin/feature/leticia-update-readme' into develop
-  | |\ \ \
+  | |\ \ \  
   | * \ \ \   9524573 Merge branch 'feature/alana-add-css' into develop
-  | |\ \ \ \
-  | | * | | | c0135bb (origin/feature/alana-add-css) feat: Adiciona arquivo de estilo CSS básico
+  | |\ \ \ \  
+  | | * | | | c0135bb (origin/feature/alana-add-css, feature/alana-add-css) feat: Adiciona arquivo de estilo CSS básico
   | |/ / / /  
   |/| | | |   
   | * | | |   bf1a8a5 fix: Resolve conflito de merge no titulo do index.html
   | |\ \ \ \  
-  | | * | | | 2453376 (origin/feature/alana-add-title) feat: Adiciona H1 principal na página
+  | | * | | | 2453376 (origin/feature/alana-add-title, feature/alana-add-title) feat: Adiciona H1 principal na página
   | |/ / / /  
   |/| | | |   
   | * | | | e7bd767 Merge branch 'feature/vitor-add-html' into develop
   |/| | | |
-  | | |/ /
-  | |/| |
-  | * | | 2234fde (origin/feature/vitor-add-html) feat: Adiciona estrutura base do index.html
-  |/ / /
+  | | |/ /  
+  | |/| |   
+  | * | | 2234fde (origin/feature/vitor-add-html, feature/vitor-add-html) feat: Adiciona estrutura base do index.html
+  |/ / /  
   | | | * 5bdfd4a (origin/feature/leticia-update-readme, feature/leticia-update-readme) docs: Preenche nomes da equipe no RELATORIO
-  | | |/
-  | | | * 6362222 (backup/feature/leticia-add-footer) fix: Atualiza nome da equipe no footer
-  | | | * ee91f46 feat: Adiciona footer na página
-  | | |/
+  | | |/  
   | | * 810914b fix: Atualiza nome da equipe no footer
   | | * 7ea6da0 feat: Adiciona footer na página
-  | |/
+  | |/  
   | * 8e4ac0a docs: Preeche nomes da equipe em RELATORIO
   |/
 * 28f90da chore: adicionar .gitignore na raiz
 * 0c33e20 configurações iniciais
 * 62bfb2a feat: adicionar RELATORIO inicial
+  (END)
+
+**Capturas de Tela:**
+
+![Histórico parte 1](images/oneline%20graph%20all%201.png)
+![Histórico parte 2](images/oneline%20graph%20all2.png)
+![Histórico parte 3](images/oneline%20graph%20all3.png)
+
