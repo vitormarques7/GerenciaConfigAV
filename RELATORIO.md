@@ -44,7 +44,17 @@
   </details>
   
   - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
+  <details>
+    <summary>Clique para ver o print do commit</summary>
+  
+    ![imagem commits2.png](../../Users/Bruno/OneDrive/Pictures/Screenshots%201/imagem%20commits2.png)
+  </details>
   - `feature/leticia-update-readme` – preenche nomes no `README.md`
+  <details>
+    <summary>Clique para ver o print do commit</summary>
+  
+    ![imagem commits1.png](../../Users/Bruno/OneDrive/Pictures/Screenshots%201/imagem%20commits1.png)
+  </details>
 - Todos os commits foram registrados e enviados para o remoto.
 
 ### 2.2 Conflitos
