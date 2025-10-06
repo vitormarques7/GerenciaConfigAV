@@ -187,7 +187,7 @@ git log --oneline --graph --all
 * 62bfb2a feat: adicionar RELATORIO inicial
   (END)
 
-**Capturas de Tela:**
+**Em Captura de Tela:**
 
 ![Histórico parte 1](images/oneline%20graph%20all%201.png)
 ![Histórico parte 2](images/oneline%20graph%20all2.png)
