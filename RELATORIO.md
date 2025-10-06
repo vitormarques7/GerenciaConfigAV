@@ -42,7 +42,7 @@
 
     ![Commit da feature/alana-add-css](images/alana-commit-feature-css.png)
   </details>
-  
+
   - `feature/leticia-add-footer` – adiciona `<footer>` no `index.html`
   - `feature/leticia-update-readme` – preenche nomes no `README.md`
 - Todos os commits foram registrados e enviados para o remoto.
@@ -75,13 +75,28 @@
   ```
 
 ### 2.4 Hotfix
-- Criado `hotfix/2.0.1` para corrigir estrutura do relatório e adicionar nomes da equipe.
-- Merge do hotfix feito em `main` e `develop`.
-- Tag criada:
-  ```bash
-  git tag -a v2.0.1 -m "Correção crítica 2.0.1"
-  git push origin v2.0.1
-  ```
+- O problema corrigido foi a estrutura do arquivo `RELATORIO.md`, que não estava de acordo com o modelo solicitado. O hotfix ajustou o título e adicionou a seção de identificação com os nomes dos integrantes da equipe.
+
+- A integração foi realizada pelo integrante Vitor. Após a criação da branch `hotfix/2.0.1` por Alana, ele executou os comandos para fazer o merge da correção em `main` e, em seguida, em `develop`, garantindo que a correção não se perdesse em futuros desenvolvimentos. Os comandos foram:
+    ```bash
+    # 1. Integre na main
+    git checkout main
+    git merge --no-ff hotfix/2.0.1
+    git push origin main
+    git tag -a v2.0.1 -m "Correção critica 2.0.1"
+    git push origin v2.0.1
+
+    # 2. Integre na develop
+    git checkout develop
+    git merge --no-ff hotfix/2.0.1
+    git push origin develop
+
+- Abaixo, o print da criação da branch, commit e push do hotfix realizado por Alana.
+  <details>
+    <summary>Clique para ver o print da criação do Hotfix</summary>
+
+    ![Criação do Hotfix](images/alana-commit-hotfix.png)
+  </details>
 
 ### 2.5 Uso de Rebase
 - Aplicado rebase na branch `feature/leticia-add-footer`.
